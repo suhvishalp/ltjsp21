@@ -111,6 +111,80 @@ https://www.baeldung.com/spring-bean
 https://www.baeldung.com/spring-why-to-choose
 
 
+Spring Boot autoconfiguration 
 
+
+- Java Application 
+    - Object model 
+
+
+- Database 
+    - Relational model 
+
+- ORM tools 
+    - hibernate
+    - iBatis 
+    - Toplink 
+    - ...
+
+    -> mapping the java objects to the relational tables 
+
+
+    JPA - java persistence API
+
+        - specifications / standards for ORM Tool 
+
+    JPA Providers
+    ------------------
+        - hibernate / hibernate jpa
+        - mybatis 
+        - eclipselink
+        - openjpa
+
+
+
+    Entity 
+        - Entity is an object which is managed by the JPA Persistence provider 
+        - when we talk about mapping objects to a relational database, persisting objects, 
+                query operations... instead of 'object' we use the term 'Entity'
+        - Entities can be concrete or abstract 
+        - they support inheritance, relationships 
+        - Create Entity Class 
+
+            @Entity 
+            public class Employee {
+
+                    @Id 
+                    private int id;
+                    //...
+                    //..
+
+                    public Employee(){}
+
+                    //getter/setter
+            }
+
+    EntityManager 
+        - responsible to persist entities, query entities etc. 
+
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("PUName");
+        EntityManager manager = factory.createEntityManager();
+
+    Persistence Unit 
+    -------------------
+        - a named configuration of a set of entities you want to persist 
+        - defined in persistence.xml file 
+
+
+    default mapping 
+
+    custom mapping 
+
+    inheritance 
+
+    relationships
+
+
+    Spring Data JPA
 
 

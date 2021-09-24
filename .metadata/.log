@@ -5254,3 +5254,105 @@ java.lang.InterruptedException
 
 !ENTRY org.eclipse.jdt.apt.pluggable.core 1 1 2021-09-24 11:33:55.475
 !MESSAGE Field value processing of @ConfigurationProperty meta-data is not supported
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:50:04.744
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.xSBWSpbD
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:50:04.748
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.xSBWSpbD
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:50:04.750
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:50:04.751
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.xSBWSpbD => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:27.091
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:27.092
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@4733c7f0[org.springframework.tooling.boot.ls:1.27.0.202108151936(id=552)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:27.092
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.578
+!MESSAGE Boot LS startup time from start to initialized: 7484ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.753
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.TwnjnOrDisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.753
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.753
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.754
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.754
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.754
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.TwnjnOrD => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.755
+!MESSAGE classpath=7 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.755
+!MESSAGE buffering callback sts4.classpath.TwnjnOrD JPADemo1 false 7
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.755
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.757
+!MESSAGE classpath=59 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.758
+!MESSAGE buffering callback sts4.classpath.TwnjnOrD 03javaconfig-solution false 59
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:34.760
+!MESSAGE executing callback sts4.classpath.TwnjnOrD 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:54:35.565
+!MESSAGE executing callback sts4.classpath.TwnjnOrD SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-24 16:56:20.803
+!MESSAGE The artifact org.hibernate:hibernate-core:pom:6.0.0.Alpha7 has been relocated to org.hibernate.orm:hibernate-core:pom:6.0.0.Alpha7
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-24 16:56:20.804
+!MESSAGE The artifact org.hibernate:hibernate-entitymanager:pom:6.0.0.Alpha7 has been relocated to org.hibernate.orm:hibernate-entitymanager:pom:6.0.0.Alpha7
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:56:21.701
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:56:21.702
+!MESSAGE classpath=32 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:56:21.703
+!MESSAGE buffering callback sts4.classpath.TwnjnOrD JPADemo1 false 32
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:56:21.703
+!MESSAGE executing callback sts4.classpath.TwnjnOrD 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-09-24 16:56:21.721
+!MESSAGE executing callback sts4.classpath.TwnjnOrD SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-24 16:56:21.863
+!MESSAGE The artifact org.hibernate:hibernate-core:pom:6.0.0.Alpha7 has been relocated to org.hibernate.orm:hibernate-core:pom:6.0.0.Alpha7
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-24 16:56:21.863
+!MESSAGE The artifact org.hibernate:hibernate-entitymanager:pom:6.0.0.Alpha7 has been relocated to org.hibernate.orm:hibernate-entitymanager:pom:6.0.0.Alpha7
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-24 16:56:24.217
+!MESSAGE The artifact org.hibernate:hibernate-core:pom:6.0.0.Alpha7 has been relocated to org.hibernate.orm:hibernate-core:pom:6.0.0.Alpha7
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-24 16:56:24.217
+!MESSAGE The artifact org.hibernate:hibernate-entitymanager:pom:6.0.0.Alpha7 has been relocated to org.hibernate.orm:hibernate-entitymanager:pom:6.0.0.Alpha7
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-24 16:56:30.059
+!MESSAGE The artifact org.hibernate:hibernate-core:pom:6.0.0.Alpha7 has been relocated to org.hibernate.orm:hibernate-core:pom:6.0.0.Alpha7
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2021-09-24 16:56:30.060
+!MESSAGE The artifact org.hibernate:hibernate-entitymanager:pom:6.0.0.Alpha7 has been relocated to org.hibernate.orm:hibernate-entitymanager:pom:6.0.0.Alpha7
