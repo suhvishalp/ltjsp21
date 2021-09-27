@@ -176,15 +176,125 @@ Spring Boot autoconfiguration
         - defined in persistence.xml file 
 
 
+
+
+
+    Spring Data JPA
+        - offers repository pattern 
+
+        Repository<T, ID> interface 
+            |
+            |
+            |
+        CrudRepository<T, ID> interface 
+            |
+            |-->describes all the common methods to perform Crud operations 
+            |
+            |-> long count()
+            |-> void	delete(T entity)
+            |-> void	deleteAll()
+            |-> void	deleteById(ID id)
+            |-> Iterable<T>	findAll()
+            |-> Optional<T>	findById(ID id)
+            |-> <S extends T> S	save(S entity)
+            |-> ..
+            |
+        PagingAndSortingRepository<T, ID> interface
+            |
+            |
+            |-> Page<T>	findAll(Pageable pageable)
+            |-> Iterable<T>	findAll(Sort sort)
+            |
+            |
+        JpaRepository<T, ID> interface
+            |
+            |-> List<T>	findAll() 
+            |-> <S extends T>List<S>	findAll(Example<S> example)
+
+
     default mapping 
 
+        - name of table is similar to entity class name 
+        - name of table field is similar to property/attribute of entity class 
+        - each primitive type of java has a default mapping sqltype in rdbms db 
+
+                String                  VARCHAR(255)
+                int 
+                long 
+                byte 
+                float
+                double
+                boolean 
+                Date 
+
+
     custom mapping 
+
+        @Table 
+        @Column 
+
+
+
+    Query data / fetching data from db
+    -----------------------------------------
+
+        1. using methods offered by repository pattern 
+                Iterable<T>	findAll()
+                Page<T>	findAll(Pageable pageable)
+                Iterable<T>	findAll(Sort sort)
+                List findAll(Example<S> example)
+                T findOne(Example<S> example)
+
+        2. using custom query methods 
+
+                    //JPQL statement 
+                    @Query("SELECT e FROM Employee e")
+		            List<Employee> getAllEmployees();
+
+                    @Query("SELECT e FROM Employee e where e.salary>=:sal")
+		            List<Employee> getAllEmployees(@Param("sal") double salary);
+
+                    //native SQL Statement 
+                    @Query(value = "SELECT * FROM Employee e where salary>=:sal", nativeQuery = true)
+			        List<Employee> getAllEmployees(@Param("sal") double salary);
+
+        3. using named queries 
+
+                    @Entity
+                    @NamedQuery(name = "getAllEmpsByCity", query = "SELECT e FROM Employee e where e.city=?1")
+                    public class Employee {
+                                //...
+                    }
+
+                    //repository
+                    //named query example
+			        List<Employee> getAllEmpsByCity(String city);
+
+
+        4. using the query generation methods 
+
+
+
+        //executing dynamic queries 
+        5. using Criteria API 
+
+        6. using QueryDSL API
+
+
+
+
+
+
+
 
     inheritance 
 
     relationships
 
 
-    Spring Data JPA
+
+
+    **Create custom auto configuration class 
+        https://www.baeldung.com/spring-boot-custom-auto-configuration
 
 
