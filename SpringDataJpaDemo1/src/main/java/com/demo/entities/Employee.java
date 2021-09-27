@@ -11,17 +11,11 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-@Table(name = "employee_table")
 @NamedQuery(name = "getAllEmpsByCity", query = "SELECT e FROM Employee e where e.city=?1")
-public class Employee {
+public class Employee extends User {
 	
-	@Id
-	private int id;
-	
-	@Column(name = "ename", length = 50)
-	private String name;
+
 	private String city;
-	
 	
 	private double salary;
 	
@@ -36,14 +30,6 @@ public class Employee {
 	
 	
 	
-
-	public Employee(String name) {
-		super();
-		this.name = name;
-	}
-
-
-
 
 	public boolean isActive() {
 		return isActive;
@@ -68,23 +54,6 @@ public class Employee {
 	}
 
 
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getCity() {
 		return city;
 	}
@@ -101,10 +70,7 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	@Override
-	public String toString() {
-		return "\n\t Employee [id=" + id + ", name=" + name + ", city=" + city + ", salary=" + salary + "]";
-	} 
+	 
 	
 	
 }

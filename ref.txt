@@ -281,18 +281,88 @@ Spring Boot autoconfiguration
         6. using QueryDSL API
 
 
+    Inheritance 
+    ----------------
+            class User {
+                //common properties 
+                // id, username, password
+            }
+
+            class Employee {                class Customer {
+                //empid, salary, 
+            }                                }
+
+    Relationships
+    -----------------
+
+            class Department {                                  class Employee {
+                
+                private int deptId;                                 private int empid;
+                private String name;                                private string name; 
+                                                                    private String city;
+                                                                    //...
+
+                @OneToMany                                          @ManyToOne
+                private List<Employee> employees;                   private Department department;
+
+                //constructor /getter / setters                     //constructor /getter / setters
+
+            }                                                      }
+
+            Department_tb                                          employee_tb
+            -------------------                                    -------------------
+            deptId      name                                        empid       name        city    deptId
+            1           sdfdfsdfsd
+
+            department_employee
+            ---------------------
+            deptId     empId
+            1           1
+            1           2
+            1           3
+
+            
+            
+                                                             
+
+
+        1. identify & configure the relationship using appropriate annotations 
+                - consider the direction and cardinality 
+
+                    Department     1 <-----------------> *   Employee
+
+
+        2. Understand how the associations are represented in db 
+
+                @OneToOne               : join column               Eager
+                @ManyToOne              : join column               Eager
+
+
+                @OneToMany              : join table                Lazy
+                @ManyToMany             : join table                Lazy
+
+
+        3. define appropriate CASCADE event & Fetch policy when entities are associated with each other 
+
+
+                Cascade events 
+                    - PERSIST 
+                    - REMOVE 
+                    - MERGE 
+                    - DETACH 
+                    - ALL 
+
+        4. perform DB operations
 
 
 
 
+        class Genre {                               class Movie {
+            //..                                        //..
+        }                                           }
 
 
-    inheritance 
-
-    relationships
-
-
-
+        Genre  1 <----------------> *     Movie
 
     **Create custom auto configuration class 
         https://www.baeldung.com/spring-boot-custom-auto-configuration

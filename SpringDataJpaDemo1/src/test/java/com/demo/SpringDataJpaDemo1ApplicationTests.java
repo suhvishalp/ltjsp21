@@ -1,8 +1,11 @@
 package com.demo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+
+import javax.transaction.Transactional;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +13,23 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Sort;
 
+import com.demo.entities.Customer;
 import com.demo.entities.Employee;
+import com.demo.entities.Genre;
+import com.demo.entities.Movie;
+import com.demo.repositories.CustomerRepository;
 import com.demo.repositories.EmployeeRepository;
+import com.demo.repositories.GenreRepository;
+import com.demo.repositories.MovieRepository;
 
 @SpringBootTest
 class SpringDataJpaDemo1ApplicationTests {
 	
 	@Autowired
 	private EmployeeRepository empRepo;
+	
+	@Autowired
+	private CustomerRepository custRepo;
 
 	@Test
 	void contextLoads() {
@@ -35,7 +47,7 @@ class SpringDataJpaDemo1ApplicationTests {
 //		empRepo.save(emp);
 //		
 //	}
-	
+//	
 //	@Test
 //	public void testFindEmployee() {
 //		
@@ -69,7 +81,8 @@ class SpringDataJpaDemo1ApplicationTests {
 //	public void testCreateEmployees() {
 //		Employee emp = new Employee();
 //		emp.setId(1);
-//		emp.setName("vishal");
+//		emp.setUsername("vishal");
+//		emp.setPassword("vis123");
 //		emp.setCity("Hyd");
 //		emp.setDoj(new Date(2021, 1, 1));
 //		emp.setActive(true);
@@ -77,6 +90,21 @@ class SpringDataJpaDemo1ApplicationTests {
 //		empRepo.save(emp);
 //	}
 //	
+//	@Test
+//	public void testCreateCustomer() {
+//		
+//		Customer cust = new Customer();
+//		cust.setAddress("Mumbai");
+//		cust.setCustId(2);
+//		cust.setId(2);
+//		cust.setPassword("somepass");
+//		cust.setUsername("anil");
+//		
+//		
+//		custRepo.save(cust);
+//	}
+//	
+	
 	
 //	@Test
 //	public void testExample() {
@@ -107,11 +135,11 @@ class SpringDataJpaDemo1ApplicationTests {
 //	
 	
 	
-	@Test
-	public void testQueryGenerationMethod() {
-		List<Employee> list =  empRepo.findAllByCityAndSalaryGreaterThan("Hyd",2500.00);
-		System.out.println(list);
-	}
+//	@Test
+//	public void testQueryGenerationMethod() {
+//		List<Employee> list =  empRepo.findAllByCityAndSalaryGreaterThan("Hyd",2500.00);
+//		System.out.println(list);
+//	}
 	
 //	@Test
 //	public void testSorting() {
@@ -122,6 +150,56 @@ class SpringDataJpaDemo1ApplicationTests {
 //			System.out.println(emp);
 //		}
 //	}
+	
+	
+	@Autowired
+	GenreRepository genreRepo;
+	
+	@Autowired
+	MovieRepository movieRepo;
+	
+//	@Test
+//	public void testGenreCreate() {
+//		
+//		Genre genre = new Genre();
+//		genre.setName("Action");
+//		
+//		Movie m1 = new Movie();
+//		m1.setTitle("movie1");
+//		m1.setDailyRentalRate(1);
+//		m1.setNumberInStock(3);
+//		m1.setGenre(genre);
+//		
+//		Movie m2  = new Movie();
+//		m2.setTitle("movie1");
+//		m2.setDailyRentalRate(1);
+//		m2.setNumberInStock(3);
+//		m2.setGenre(genre);
+//		
+//		
+//		genre.addMovie(m1);
+//		genre.addMovie(m2);
+//		
+//		genreRepo.save(genre);
+//	}
+	
+	@Test
+	@Transactional
+	public void testFetchGenre() {
+		Optional<Genre> optGenre =  genreRepo.findById(1);
+		if(optGenre.isPresent()) {
+			Genre genre = optGenre.get();
+			System.out.println("\n\n\t Genre name : " + genre.getName());
+			
+			List<Movie> list = genre.getMovies();
+			System.out.println("\n\n\t Movie count : " + list.size());
+		}
+	}
+	
+	@Test
+	public void testMovieCreate() {
+		
+	}
 	
 	
 }
