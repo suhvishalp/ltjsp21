@@ -49,6 +49,7 @@
 			<item value="Demo1"/>
 		</list>
 		<list key="artifactId">
+			<item value="JPADemo1"/>
 			<item value="demo2"/>
 			<item value="Demo1"/>
 		</list>
@@ -70,6 +71,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/Users/vishal/Downloads/spring-basic-ws/03javaconfig-solution"/>
 			<item value="/Users/vishal/Downloads/spring-basic-ws"/>
 			<item value="/Users/vishal/Downloads/javaspag21-main"/>
 		</list>
