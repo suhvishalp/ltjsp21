@@ -78,6 +78,15 @@ public class Movie {
 	public void setDailyRentalRate(int dailyRentalRate) {
 		this.dailyRentalRate = dailyRentalRate;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "\n\tMovie [_id=" + _id + ", title=" + title + ", numberInStock=" + numberInStock + ", dailyRentalRate="
+				+ dailyRentalRate + ", genre=" + genre + "]";
+	}
+	
 	
 	
 }

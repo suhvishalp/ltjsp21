@@ -1,26 +1,21 @@
 package com.demo;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
-import javax.transaction.Transactional;
+import javax.persistence.EntityManager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Sort;
 
-import com.demo.entities.Customer;
 import com.demo.entities.Employee;
-import com.demo.entities.Genre;
-import com.demo.entities.Movie;
+import com.demo.entities.QEmployee;
+import com.demo.entities.QGenre;
 import com.demo.repositories.CustomerRepository;
 import com.demo.repositories.EmployeeRepository;
 import com.demo.repositories.GenreRepository;
 import com.demo.repositories.MovieRepository;
+import com.querydsl.jpa.impl.JPAQuery;
 
 @SpringBootTest
 class SpringDataJpaDemo1ApplicationTests {
@@ -158,20 +153,23 @@ class SpringDataJpaDemo1ApplicationTests {
 	@Autowired
 	MovieRepository movieRepo;
 	
+	@Autowired
+	EntityManager entityManager;
+	
 //	@Test
 //	public void testGenreCreate() {
 //		
 //		Genre genre = new Genre();
-//		genre.setName("Action");
+//		genre.setName("Drama");
 //		
 //		Movie m1 = new Movie();
-//		m1.setTitle("movie1");
+//		m1.setTitle("movie3");
 //		m1.setDailyRentalRate(1);
 //		m1.setNumberInStock(3);
 //		m1.setGenre(genre);
 //		
 //		Movie m2  = new Movie();
-//		m2.setTitle("movie1");
+//		m2.setTitle("movie4");
 //		m2.setDailyRentalRate(1);
 //		m2.setNumberInStock(3);
 //		m2.setGenre(genre);
@@ -183,17 +181,63 @@ class SpringDataJpaDemo1ApplicationTests {
 //		genreRepo.save(genre);
 //	}
 	
+//	@Test
+//	@Transactional
+//	public void testFetchGenre() {
+//		Optional<Genre> optGenre =  genreRepo.findById(1);
+//		if(optGenre.isPresent()) {
+//			Genre genre = optGenre.get();
+//			System.out.println("\n\n\t Genre name : " + genre.getName());
+//			
+//			List<Movie> list = genre.getMovies();
+//			System.out.println("\n\n\t Movie count : " + list.size());
+//		}
+//	}
+	
+	
+//	@Test
+//	@Transactional
+//	public void testCachingLevel1() {
+//		
+//	    Session session =  entityManager.unwrap(Session.class);
+//		
+//		Optional<Genre> optGenre1 =  genreRepo.findById(1);
+//		Genre genre = optGenre1.get();
+//		Optional<Genre> optGenre2 =  genreRepo.findById(1);
+//		
+//		session.evict(genre);
+//		
+//		Optional<Genre> optGenre3 =  genreRepo.findById(1);
+//		
+//		Optional<Genre> optGenre4 =  genreRepo.findById(1);
+
+
+
+
+//		if(optGenre.isPresent()) {
+//			Genre genre = optGenre.get();
+//			System.out.println("\n\n\t Genre name : " + genre.getName());
+//			
+//			List<Movie> list = genre.getMovies();
+//			System.out.println("\n\n\t Movies : " + list);
+//		}
+//	}
+	
+	
+	
 	@Test
-	@Transactional
-	public void testFetchGenre() {
-		Optional<Genre> optGenre =  genreRepo.findById(1);
-		if(optGenre.isPresent()) {
-			Genre genre = optGenre.get();
-			System.out.println("\n\n\t Genre name : " + genre.getName());
-			
-			List<Movie> list = genre.getMovies();
-			System.out.println("\n\n\t Movie count : " + list.size());
-		}
+	public void testQueryDsl() {
+		
+		//QGenre genre = QGenre.genre;
+		JPAQuery query = new JPAQuery(entityManager);
+//		query.from(genre).fetchFirst();
+		
+		
+	QEmployee employee = QEmployee.employee;
+	
+			query.from(employee).where(employee.salary.gt(2500));
+			List<Employee> list = query.fetch();
+			System.out.println(list);
 	}
 	
 	@Test
