@@ -368,3 +368,87 @@ Spring Boot autoconfiguration
         https://www.baeldung.com/spring-boot-custom-auto-configuration
 
 
+
+
+    Transactions 
+    -----------------
+
+
+                PlatformTransactionManager 
+                        |
+        ------------------------------------------------------------------------------------------------
+        DatasourceTransactionManager            HibernateTransactionManager             JpaTransactionManager
+
+
+
+
+
+        - programmatic way 
+
+
+        - declarative way - using annotations 
+
+
+
+        - Caching 
+        ----------------
+
+
+            Level 1                 - Session           - by default enabled 
+
+
+            Level 2                 - SessionFactorry      - 
+
+
+        - Caching Frameworks 
+            - EhCache 
+                - supports in memory and disk based cache 
+
+            - 
+
+
+        Spring REST 
+        ----------------
+
+            - REST APIs 
+
+                    GET         http://localhost:8080/api/employees
+                                    - return all employees 
+
+                    GET         http://localhost:8080/api/employees/12   
+                                    - return the emp with the given id 
+
+                    POST         http://localhost:8080/api/employees 
+
+                                    {
+                                        name : "xxxxx", 
+                                        city : "xxxxx", 
+                                        salary : "xxxxx"
+                                    } 
+
+                     PUT         http://localhost:8080/api/employees/12
+
+                                    {
+                                        name : "xxxxx", 
+                                        city : "xxxxx", 
+                                        salary : "xxxxx"
+                                    }   
+
+                     DELETE         http://localhost:8080/api/employees/12
+
+                                   
+
+            - Controllers 
+
+
+            - Handler mappings
+
+            - Reading Request data, req/path/route parameters / query parameters 
+
+
+            - Exception/error handling
+
+            - Validation 
+
+        Spring Data REST 
+        -------------------
