@@ -71,6 +71,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/Users/vishal/Documents/Java-batch3-sep/spring-basic-ws"/>
 			<item value="/Users/vishal/Downloads/spring-basic-ws/03javaconfig-solution"/>
 			<item value="/Users/vishal/Downloads/spring-basic-ws"/>
 			<item value="/Users/vishal/Downloads/javaspag21-main"/>
